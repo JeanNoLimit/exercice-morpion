@@ -1,0 +1,43 @@
+#container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(image/tic-tac-toe.jpg) ;
+}
+
+#morpion {
+    width: 700px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    gap:5px;
+    justify-content: center;
+    align-content: center;
+}
+.carre{
+    display:flex;
+    width: 200px;
+    height: 200px;
+    background-color:rgba(240,240,240,0.5);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+    transition: 0.5s;   
+}
+
+.x-clicked{
+    color:red;
+    font-size: 30px;
+}
+
+.o-clicked{
+    color:green;
+    font-size : 30px;
+}
+
+.message{
+    color:white;
+    font-size: 2em;
+}
