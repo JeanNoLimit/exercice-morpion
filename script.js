@@ -7,6 +7,7 @@ const container=document.querySelector("#container");
 const morpion=document.querySelector("#morpion");
 container.appendChild(message);
 let cases=[] //Tableau contenant nos div, 
+
 for(let i=1; i<=9; i++){
 
     let newCarre=carre.cloneNode();
@@ -23,7 +24,10 @@ message.innerHTML="C'est au tour de X!";
 let tour = 1; //défini si X ou O doit jouer
     cases.forEach(newCarre => {
         newCarre.addEventListener("click", (e)=> {
-        // newCarre.classList.add(".checked"); //Redemander à quoi correspond cette classe
+            //On vérifie que la l'élément newCarre n'appartient pas déja à une des 2 classes "clicked"
+        if(newCarre.classList.contains("x-clicked")||newCarre.classList.contains("o-clicked")){
+            message.innerHTML="case déja jouée!";
+        }else{
             nbChecked++;
             if(tour==1){
                 newCarre.innerHTML="X";
@@ -38,7 +42,7 @@ let tour = 1; //défini si X ou O doit jouer
                 message.innerHTML="C'est au tour de X!"
                 tour=1;
             }
-
+        }
         });
     });
 
